@@ -1,0 +1,95 @@
+---
+title: "CodeBook"
+author: "Michael Becker"
+date: "February 25, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Data Dictionary
+##Data Set Information
+These data represent the recordings of 30 subjects performing activities of daily living while carrying a waist-mounted smartphone with embedded inertial sensors. Subjects in this study ranged in age from 19-48 years and their movememnts were tracked using an accelerometer and gyroscope embedded in a Samsung Galaxy S II smartphone.
+
+While these data are available online at the [Human Activity Recognition Using Smartphones Data Set](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) as training and test data for the purposes of machine learning, the run_analysis.R code in this repository combines these data and collapses them down to the subject/activity level of analysis. Reported measurement values are the average of the observations    
+
+##Attribute Information - General
+In addition to providing an identifier for subject ID and activity, the reported measurements reflect the following:
+* Triaxial (XYZ) acceleration from the acceleromter and the estimated body acceleration
+* Triaxial (XYZ) angular velocity from the gyroscope
+* Various derived mean and standard deviation values 
+
+##Attribute Coding
+
+        subject_id
+                This is a non-ordered categorical variable that identifies the each subject of the experiment and                  ranges from 1-30. 
+                
+        activity
+                This categorical (factor) variable represents which of the six designated activities was being                     observed
+                1 = Walking
+                2 = Walking Upstairs
+                3 = Walking Downstairs
+                4 = Sitting
+                5 = Standing
+                6 = Laying
+
+        
+The following are the measurements collected using the accelerometer and gyroscope embedded in a Samsung Galaxy S II smartphone. These mean values as reported in the final tidy_output data frame reflect the grand mean calculated for each subject-activity observation.     
+
+        tBodyAcc-mean()-X = Mean Body Acceleration on X Axis
+        tBodyAcc-mean()-Y = Mean Body Acceleration on Y Axis
+        tBodyAcc-mean()-Z = Mean Body Acceleration on Z Axis
+
+        tGravityAcc-mean()-X = Mean Gravity Acceleration on _ Axis
+        tGravityAcc-mean()-Y = Mean Gravity Acceleration on _ Axis
+        tGravityAcc-mean()-Z = Mean Gravity Acceleration on _ Axis
+
+        tBodyAccJerk-mean()-X = Mean Jerk Acceleration of the body on _ Axis
+        tBodyAccJerk-mean()-Y = Mean Jerk Acceleration of the body on _ Axis
+        tBodyAccJerk-mean()-Z = Mean Jerk Acceleration of the body on _ Axis
+
+        tBodyGyro-mean()-X = Mean Angular velocity of the body on _ Axis
+        tBodyGyro-mean()-Y = Mean Angular velocity of the body on _ Axis
+        tBodyGyro-mean()-Z = Mean Angular velocity of the body on _ Axis
+
+        tBodyGyroJerk-mean()-X = Mean Angular jerk of the body on _ Axis
+        tBodyGyroJerk-mean()-Y = Mean Angular jerk of the body on _ Axis
+        tBodyGyroJerk-mean()-Z = Mean Angular jerk of the body on _ Axis
+
+        tBodyAccMag-mean() = Mean Euclidean normalized magnitude of body acceleration
+        
+        tGravityAccMag-mean() = Mean Euclidean normalized magnitude of gravity acceleration 
+
+        tBodyAccJerkMag-mean() = Mean Euclidean normalized magnitude of body jerk acceleration 
+
+        tBodyGyroMag-mean() = Mean Euclidean normalized magnitude of body angular velocity
+
+        tBodyGyroJerkMag-mean() = Mean Euclidean normalized magnitude of body angular jerk velocity
+
+        fBodyAcc-mean()-X = Mean Fast Fourier Transformed frequency of Body acceleration on _ Axis
+        fBodyAcc-mean()-Y = Mean Fast Fourier Transformed frequency of Body acceleration on _ Axis
+        fBodyAcc-mean()-Z = Mean Fast Fourier Transformed frequency of Body acceleration on _ Axis
+
+        fBodyAccJerk-mean()-X = Mean Fast Fourier Transformed frequency of Body jerk acceleration on _ Axis
+        fBodyAccJerk-mean()-Y = Mean Fast Fourier Transformed frequency of Body jerk acceleration on _ Axis
+        fBodyAccJerk-mean()-Z = Mean Fast Fourier Transformed frequency of Body jerk acceleration on _ Axis
+
+        fBodyGyro-mean()-X = Mean Fast Fourier Transformed frequency of Body angular velocity on _ Axis
+        fBodyGyro-mean()-Y = Mean Fast Fourier Transformed frequency of Body angular velocity on _ Axis
+        fBodyGyro-mean()-Z = Mean Fast Fourier Transformed frequency of Body angular velocity on _ Axis
+
+        fBodyAccMag-mean() = Mean Fast Fourier Transformed frequency of Euclidean normalized magnitude of body             acceleration
+
+        fBodyAccJerkMag-mean() = Mean Fast Fourier Transformed frequency of Euclidean normalized magnitude of body         jerk acceleration
+
+        fBodyGyroMag-mean() = Mean Fast Fourier Transformed frequency of Euclidean normalized magnitude of body            angular velocity
+
+        fBodyGyroJerkMag-mean() = Mean Fast Fourier Transformed frequency of Euclidean normalized magnitude of body         angular jerk
+
+###Note
+Descriptions of the data collected were adapted from the UCI Human Activity Recognition [website](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). These were originally made available by Antigua et al. (2013)
+
+###References
+Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.

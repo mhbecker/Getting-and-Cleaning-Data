@@ -1,0 +1,38 @@
+---
+title: "README"
+author: "Michael Becker"
+date: "February 25, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## README
+The [Course Project](https://github.com/mhbecker/JHU_Data_Science_Course/Getting_and_Cleaning_Data/) repository includes three files that can be used to generate a tidy dataset of the average aggregate mean and standard deviation measurements for each subject for each activity in the University of California Irvine Machine Learning Repository project on [Human Activity Recognition Using Smartphones Data Set](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+
+##run_analysis.R
+In broad strokes, the run_analysis.R file sequentially performs the following actions.
+
+1. Opens the dplyr, plyr, and reshape2 packages
+2. Generates a data subdirectory (if not already present), downloads, and unzips the UCI HAR folder.
+3. Reads in the data from the training and test folders
+4. Renames the columns to reflect the measurements (as noted in CodeBook.Rmd)
+5. Restricts the columns of the 
+6. Bind the columns for subject_id, activity, and measurements into a "master" test and train dataframe
+7. Melts and casts 
+8. Row binds the transformed test and train dataframes to the final "tidy_output" dataframe
+9. Checks a value in the tidy_output dataframe against the calculated mean from the master_test data frame
+10. Arranges the tidy_output dataframe by subject id (ascending) then by activity
+
+Please note that if you do not currently have the dplyr, plyr, and reshape2 packages downloaded, this script will not function properly.
+
+##CodeBook.Rmd
+The CodeBook.Rmd file provides a brief description of the original source and data generating mechanisms of the Human Activity Recognition Using Smartphones Data Set and includes information on the following:
+*Data Set Information
+*Attribute Information
+*Attribute Coding
+*Notes; and 
+*References
+
