@@ -110,3 +110,4 @@ tidy_output[1,3]==(sum(filter(master_test, subject_id==2 & activity=="WALKING")[
 tidy_output<-arrange(tidy_output, subject_id, activity)
 
 tidy_output
+write.table(tidy_output, file="tidy_output", row.name=FALSE)
